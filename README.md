@@ -1,4 +1,4 @@
-# op3_controller
+# op3_walk
 [ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/simulation/)にGazeboシミュレーション内で強化学習を用いて歩行獲得させるROSパッケージ．  
 
 # 環境
