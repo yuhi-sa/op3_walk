@@ -1,6 +1,8 @@
 # op3_walk
 [ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/simulation/)にGazeboシミュレーション内で強化学習を用いて歩行獲得させるROSパッケージ．  
 
+<img width="784" alt="Screen Shot 2021-09-19 at 13 44 39" src="https://user-images.githubusercontent.com/62089243/133915753-1f11dce6-a2cd-4ecb-ad0a-b748ddc60191.png">
+
 # 環境
 - [Ubuntu 16.04 LTS](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes/Ja#Ubuntu_16.04.2BMG4wwDCmMPMw7TD8MMk-)
 - [ROS kinetic](http://wiki.ros.org/ja/kinetic/Installation/Ubuntu)
