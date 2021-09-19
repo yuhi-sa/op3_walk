@@ -2,6 +2,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/yuhi-sa/op3_walk)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yuhi-sa/op3_walk)
 ![GitHub top language](https://img.shields.io/github/languages/top/yuhi-sa/op3_walk)
+![GitHub language count](https://img.shields.io/github/languages/count/yuhi-sa/op3_walk)
 # op3_walk
 [ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/simulation/)にGazeboシミュレーション内で強化学習を用いて歩行獲得させるROSパッケージ．  
 
