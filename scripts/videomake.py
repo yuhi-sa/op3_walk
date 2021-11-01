@@ -10,7 +10,7 @@ import os
 import time
 
 def Videomake(episode):
-    print('録画スタート')
+    print('Start Video')
     img_dir_name="./op3_movie"+episode
     os.makedirs(img_dir_name, exist_ok=True)
 

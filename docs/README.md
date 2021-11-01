@@ -5,7 +5,7 @@
 深層強化学習(DQN)を使用しています．  
 This package uses deep reinforcement learning (DQN).  
 
-行動価値関数は，3層のニューラルネットワーク(NN)として定義し，Q値を以下のように更新し，  
+行動価値関数は，3層のニューラルネットワーク(NN)として定義しQ値を以下のように更新し，  
 The action value function is defined as a three-layer neural network (NN), and the Q-value is updated as follows  
 
 $Q(s_t,a_t) = Q(s_t,a_t) + \eta(R_{t+1)}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)$

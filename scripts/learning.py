@@ -71,7 +71,6 @@ def callback(data):
 
 def learning(next_state,time_record):
     distance = next_state[0]
-    gosa = abs(next_state[1])
     high = next_state[2]
 
     next_state = torch.unsqueeze(torch.from_numpy(np.array(next_state)).type(torch.FloatTensor), 0)
@@ -83,16 +82,13 @@ def learning(next_state,time_record):
     elif high < 0.145:
         reward = -2 + (distance-agent.distance_old)*10
     
-    print('試行数:', agent.episode-1, '回数：', agent.trial, '報酬：', reward, '距離：', distance)
+    print('Episode:', agent.episode-1, 'Trial：', agent.trial, 'Reward：', reward, 'Distance：', distance)
 
     reward = torch.unsqueeze(torch.from_numpy(np.array(reward)).type(torch.FloatTensor), 0)
 
     if agent.state is not None:
         agent.memorize(next_state, reward)
-        agent.update_q_function()
-
-    agent.state = next_state
-    agent.distance_old = distance
+        agent.update_q_function()   
 
     # Record Movie
     pub2 = rospy.Publisher('recorder', String, queue_size=1)
@@ -102,6 +98,10 @@ def learning(next_state,time_record):
             pub2.publish(data)
             agent.last_index = agent.episode
     
+    # Record
+    agent.state = next_state
+    agent.distance_old = distance
+
     # Reset
     if time_record > (agent.start_time+20) or agent.episode==1 or high < 0.145:
         print('############## Reset ##############')
@@ -123,14 +123,12 @@ def learning(next_state,time_record):
 
 
 def controller():
-    # Node Name Declaration
+    # Initialize Node
     rospy.init_node('controller', anonymous=True)
-
     # Initialize
     pub = rospy.Publisher('command_pub', Command, queue_size=1)
     array = motion.motion(100)
     pub.publish(array)
-
     # Subscriber
     sub = rospy.Subscriber('gazebo/model_states', ModelStates, callback)
     rate = rospy.Rate(1000)

@@ -9,14 +9,13 @@ from std_msgs.msg import String
 
 from videomake import Videomake
 
-
 def callback(data):
     Videomake(data.data)
    
 def recorders():
-    #ノード名を宣言
+    # Initialize Node
     rospy.init_node('recode', anonymous=True)
-    #Subscriberを作成
+    # Subscriber
     rospy.Subscriber('recorder', String, callback)
     rospy.spin()
 
