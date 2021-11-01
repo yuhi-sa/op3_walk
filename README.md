@@ -5,6 +5,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/yuhi-sa/op3_walk)
 # op3_walk
 [ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/simulation/)にGazeboシミュレーション内で強化学習を用いて歩行獲得させるROSパッケージ．  
+ROS package for [ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/simulation/) to acquire walking using reinforcement learning  
 
 <img width="767" alt="Screen Shot 2021-09-19 at 13 48 08" src="https://user-images.githubusercontent.com/62089243/133915805-6b610b84-f68f-4902-aacd-979466303707.png">
 
