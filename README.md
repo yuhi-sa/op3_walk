@@ -42,7 +42,7 @@ $ roslaunch op3_gazebo robotis_world.launch
 # activate (python2 env)
 $ rosrun op3_controller controller.py
 
-# activate (python3が入っているanaconda)
+# activate (python3 env)
 $ rosrun op3_controller learning.py
 ```
 
