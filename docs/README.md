@@ -8,11 +8,12 @@ This package uses deep reinforcement learning (DQN).
 行動価値関数は，3層のニューラルネットワーク(NN)として定義し，Q値を以下のように更新し，  
 The action value function is defined as a three-layer neural network (NN), and the Q-value is updated as follows  
 
-$$Q(s_t,a_t) = Q(s_t,a_t) + \eta(R_{t+1)}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)$$
+$Q(s_t,a_t) = Q(s_t,a_t) + \eta(R_{t+1)}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)$
 
 損失関数$L$を用いて誤差逆伝播しニューラルネットを更新しています．  
 The neural network is updated by back propagation using the loss function L.
-$$L = \mathbb{E}(R_{t+1}+\gamma \max Q(s_{t+1},a_t)- Q(s_t,a_t))$$
+
+$ L = \mathbb{E}(R_{t+1}+\gamma \max Q(s_{t+1},a_t)- Q(s_t,a_t))$
 
 # プログラムの説明 / code
 ## [function.py](https://github.com/yuhi-sa/op3_walk/blob/main/scripts/function.py) and [motion.py](https://github.com/yuhi-sa/op3_walk/blob/main/scripts/motion.py)
@@ -23,10 +24,10 @@ $$L = \mathbb{E}(R_{t+1}+\gamma \max Q(s_{t+1},a_t)- Q(s_t,a_t))$$
 Agentクラスが，ニューラルネットの定義をしているBrainクラスを持っています．  
 The Agent class has a Brain class that defines the neural network.  
 
-ReplayMemoryクラスに蓄積される行動と状態で，Brainは損失の計算と更新を行います．
+ReplayMemoryクラスに蓄積される行動と状態で，Brainは損失の計算と更新を行います．  
 With the actions and states stored in the ReplayMemory class, Brain calculates and updates the loss.  
 
-行動は離散化しており，[motion]で定義されている行動の中から，epsilon-greedy選択を行います．
+行動は離散化しており，[motion]で定義されている行動の中から，epsilon-greedy選択を行います．  
 The actions are discretized, and epsilon-greedy selection is made among the actions defined in [motion].
 
 こちらの書籍のコードを参考にしています．  
@@ -49,10 +50,10 @@ This one uses pytorch to define the neural network, so it needs to be run in pyt
 [controller]は．[learning]からpublishされた行動をsubscribeして，実際にop3を動かします．  
 [controller]. It subscribes to actions published by [learning] and actually runs op3.
 
-そして，状態をpublishします．
+そして，状態をpublishします．  
 Then publish the state.
 
-こちらはop3のパッケージの関係で，python2系で実行する必要があります．
+こちらはop3のパッケージの関係で，python2系で実行する必要があります．  
 Due to the op3 package, you will need to run this in python2.
 
 # 学習曲線
