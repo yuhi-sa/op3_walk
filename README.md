@@ -8,64 +8,43 @@
 
 <img width="767" alt="Screen Shot 2021-09-19 at 13 48 08" src="https://user-images.githubusercontent.com/62089243/133915805-6b610b84-f68f-4902-aacd-979466303707.png">
 
-# 環境
+# Environment
 - [Ubuntu 16.04 LTS](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes/Ja#Ubuntu_16.04.2BMG4wwDCmMPMw7TD8MMk-)
 - [ROS kinetic](http://wiki.ros.org/ja/kinetic/Installation/Ubuntu)
 
-# 必要なパッケージのインストール
--  ROBOTIS ROS packages
+# How to Use
+## 1. Install ROS Kinetic
+- [Ubuntu install of ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+## 2. Install the package to run OP3 in the Gazebo environment
+- [Installing ROBOTIS ROS Packages](https://emanual.robotis.com/docs/en/platform/op3/recovery/#installing-robotis-ros-packages)
+
+## 3. Install this package
 ```
- $ cd ~/catkin_ws/src
- $ git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-Framework.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-Framework-msgs.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-Math.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-OP3.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Demo.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-msgs.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Tools.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-OP3-Common.git
- $ git clone https://github.com/ROBOTIS-GIT/ROBOTIS-Utility.git
-```
-[Installing ROBOTIS ROS Packages](https://emanual.robotis.com/docs/en/platform/op3/recovery/#installing-robotis-ros-packages)
-- ROS kineticのインストール
-```
-# apt-get install ros-kinetic-ros-control
-# apt-get install ros-kinetic-ros-controllers
-# apt-get install ros-kinetic-gazebo-ros-control
-```
-[If ros-kinetic-desktop-full was used to install, the following packages need to be installed.](https://emanual.robotis.com/docs/en/platform/op3/simulation/#gazebo-installation)
-- op3_contoller(このpackage)をインストール
-```
-cd ~/catkin_ws/src
-git clone clone URL
+$ cd ~/catkin_ws/src
+$ git clone clone URL
+$ cd ..
+$ catkin_make
 ```
 
-# 使い方
-1. ROBOTIS-OP3 in Gazeboを起動する
+## 4. Launch
+1. Start Ros
+```bash
+$ roscore
 ```
-roslaunch op3_gazebo robotis_world.launch
+2. Start OBOTIS-OP3 in Gazebo
+```bash
+$ roslaunch op3_gazebo robotis_world.launch
 ```
-2. op3_controllerを起動する
-```
-conda activate (python2が入っているanaconda)
-rosrun op3_controller controller.py
+3. Start this package
+```bash
+# activate (python2 env)
+$ rosrun op3_controller controller.py
 
-conda activate (python3が入っているanaconda)
-rosrun op3_controller recorder.py
-
-conda activate (python3が入っているanaconda)
-rosrun op3_controller learning.py
+# activate (python3が入っているanaconda)
+$ rosrun op3_controller learning.py
 ```
-# おまけ
-- GUIコマンドを利用したデモ
-```
-roslaunch op3_manager op3_gazebo.launch
-roslaunch op3_demo demo.launch
-```
-- [OP3のトピックまとめ](https://docs.google.com/document/d/12Ig3dS7uL5MNAOPqCCfnPpRVxRyvWaqoya56uJFsFv4/edit?usp=sharing)
 
-
-# 参考
+# Reference
 - [ROBOTIS OP3 e-Manual](https://emanual.robotis.com/docs/en/platform/op3/simulation/)
 - [ROBOTIS-GIT/ROBOTIS-OP3](https://github.com/ROBOTIS-GIT/ROBOTIS-OP3)
