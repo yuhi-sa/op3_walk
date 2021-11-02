@@ -1,5 +1,6 @@
 # Result Video
-[op3_controller_demo](op3_controller_demo.mp4)
+[![](https://img.youtube.com/vi/ZL22WI0yqVw/0.jpg)](https://www.youtube.com/watch?v=ZL22WI0yqVw)
+- [op3_controller_demo](op3_controller_demo.mp4)
 
 # 手法の説明 / Methods
 深層強化学習(DQN)を使用しています．  
@@ -8,12 +9,12 @@ This package uses deep reinforcement learning (DQN).
 行動価値関数は，3層のニューラルネットワーク(NN)として定義しQ値を以下のように更新し，  
 The action value function is defined as a three-layer neural network (NN), and the Q-value is updated as follows  
 
-$Q(s_t,a_t) = Q(s_t,a_t) + \eta(R_{t+1)}+\gamma \max_a Q(s_{t+1},a)-Q(s_t,a_t)$
+$Q(s_t,a_t) = Q(s_t,a_t) + \eta(R_{t+1)} + \gamma \max_a Q(s_{t+1},a) - Q(s_t,a_t)$
 
 損失関数$L$を用いて誤差逆伝播しニューラルネットを更新しています．  
 The neural network is updated by back propagation using the loss function L.
 
-$ L = \mathbb{E}(R_{t+1}+\gamma \max Q(s_{t+1},a_t)- Q(s_t,a_t))$
+$ L = \mathbb{E}(R_{t+1} + \gamma \max Q(s_{t+1},a_t)- Q(s_t,a_t))$
 
 # プログラムの説明 / code
 ## [function.py](https://github.com/yuhi-sa/op3_walk/blob/main/scripts/function.py) and [motion.py](https://github.com/yuhi-sa/op3_walk/blob/main/scripts/motion.py)

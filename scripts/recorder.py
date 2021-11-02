@@ -4,9 +4,7 @@ import rospy
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-#メッセージ型をインポート
 from std_msgs.msg import String
-
 from videomake import Videomake
 
 def callback(data):
